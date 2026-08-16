@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">gravix-quasar</string>
+    <string name="title_activity_main">gravix-quasar</string>
+    <string name="package_name">com.giraphics.gravix</string>
+    <string name="custom_url_scheme">com.giraphics.gravix</string>
+</resources>

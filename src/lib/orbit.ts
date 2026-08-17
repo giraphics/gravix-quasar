@@ -21,7 +21,7 @@ export class ParentOrbitSystem implements ISystem {
       if (childrenOf(world, eid).length === 0) {
         continue;
       }
-      Transform.rotationY[eid] = (Transform.rotationY[eid] ?? 0) + deltaSeconds * 0.7;
+      Transform.rotationY[eid] += deltaSeconds * 0.7;
     }
   }
 }

@@ -5,6 +5,7 @@
   "type": "module",
   "productName": "gravix-quasar",
   "description": "Quasar app for map and point-cloud visualisation, built on @giraphics/gravix-engine",
+  "homepage": "https://giraphics.github.io/gravix-quasar/",
   "author": "Parminder Singh",
   "scripts": {
     "dev": "quasar dev",

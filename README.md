@@ -4,6 +4,14 @@ Quasar CLI app for map and point-cloud visualisation, built on
 [`@giraphics/gravix-engine`](https://www.npmjs.com/package/@giraphics/gravix-engine)
 `0.1.0` from npm.
 
+**[Live demo](https://giraphics.github.io/gravix-quasar/)** ·
+[Lorenz attractor](https://giraphics.github.io/gravix-quasar/#/?points=300000) ·
+[WebGL2](https://giraphics.github.io/gravix-quasar/#/?backend=webgl)
+
+GitHub’s README cannot run WebGPU, so the demo is that link, not an embedded
+canvas. Use a browser with WebGPU (Chrome/Edge). If it is blank, open the
+WebGL2 link.
+
 Three independent worlds (terrain, point cloud, parent/child hierarchy). This
 repo is the **desktop/mobile** consumer. The React sibling is browser-only.
 
@@ -31,6 +39,12 @@ Hash routing is on (required for Electron/Capacitor). Query flags:
 Works as `http://localhost:9000/?backend=webgl` or `http://localhost:9000/#/?backend=webgl`.
 
 If WebGPU fails, use `?backend=webgl`.
+
+## GitHub Pages
+
+Push `main`. The workflow builds the SPA (`dist/spa`) and deploys it. **Once**,
+in the GitHub repo: **Settings → Pages → Source: GitHub Actions**. After the
+first green run the live demo URL above works.
 
 ## Desktop (Electron)
 

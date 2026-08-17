@@ -18,6 +18,9 @@ export default defineConfig(() => {
       },
 
       vueRouterMode: 'hash',
+      // Project Pages live at /gravix-quasar/. Hash routing already avoids the
+      // history-mode 404 problem; this only prefixes the JS/CSS URLs.
+      publicPath: process.env.GITHUB_PAGES === 'true' ? '/gravix-quasar/' : '/',
 
       extendViteConf(viteConf) {
         viteConf.optimizeDeps ??= {};

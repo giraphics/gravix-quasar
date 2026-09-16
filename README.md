@@ -12,6 +12,10 @@ GitHub’s README cannot run WebGPU, so the demo is that link, not an embedded
 canvas. Use a browser with WebGPU (Chrome/Edge). If it is blank, open the
 WebGL2 link.
 
+![gravix-quasar: a terrain world, a 300,000-point Lorenz attractor and a parent/child hierarchy, each in its own canvas](docs/screenshots/demo.png)
+
+*Captured from a local build using the WebGL2 backend (`?backend=webgl`).*
+
 Three independent worlds (terrain, point cloud, parent/child hierarchy). This
 repo is the **desktop/mobile** consumer. The React sibling is browser-only.
 

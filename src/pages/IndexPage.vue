@@ -3,6 +3,7 @@
     <TerrainPanel />
     <PointCloudPanel />
     <HierarchyPanel />
+    <TrafficPanel />
   </div>
 </template>
 
@@ -10,4 +11,5 @@
 import HierarchyPanel from '@/components/HierarchyPanel.vue';
 import PointCloudPanel from '@/components/PointCloudPanel.vue';
 import TerrainPanel from '@/components/TerrainPanel.vue';
+import TrafficPanel from '@/components/TrafficPanel.vue';
 </script>

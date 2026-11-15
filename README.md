@@ -16,7 +16,8 @@ WebGL2 link.
 
 *Captured from a local build using the WebGL2 backend (`?backend=webgl`).*
 
-Three independent worlds (terrain, point cloud, parent/child hierarchy). This
+Four independent worlds (terrain, point cloud, parent/child hierarchy, and live
+traffic from [gravix-sim-backend](https://github.com/giraphics/gravix-sim-backend)). This
 repo is the **desktop/mobile** consumer. The React sibling is browser-only.
 
 Electron and Capacitor modes are already added. You do not run `quasar mode add`
@@ -30,6 +31,8 @@ npm install
 npm run dev
 ```
 
+Or double-click `run.bat` (`run.bat electron` for the desktop window).
+
 http://localhost:9000
 
 Hash routing is on (required for Electron/Capacitor). Query flags:
@@ -39,10 +42,24 @@ Hash routing is on (required for Electron/Capacitor). Query flags:
 | `?backend=webgl` | Force WebGL2 |
 | `?failDevice=1` | Fail WebGPU so the WebGL2 fallback is exercised |
 | `?points=N` | Point-cloud capacity (default 300000) |
+| `?sim=ws://host:8081` | Connect the Traffic card to a simulator on load |
 
 Works as `http://localhost:9000/?backend=webgl` or `http://localhost:9000/#/?backend=webgl`.
 
 If WebGPU fails, use `?backend=webgl`.
+
+## Traffic card
+
+The fourth card shows a live run of
+[gravix-sim-backend](https://github.com/giraphics/gravix-sim-backend): roads as
+lines, one block of points per vehicle, coloured by speed. Start the simulator
+(`run-sim-server.bat` in that repo, or `cargo run --release -- serve` in its
+`sim/` folder), then press Connect. The default address is
+`ws://127.0.0.1:8081`; the Android emulator reaches your PC at
+`ws://10.0.2.2:8081`. Pick the scenario, vehicle count and vehicle size, and
+pause or resume the run. The protocol is `proto/gravix/sim/v1/sim.proto` in the
+backend repo, read by `src/lib/simproto.ts`. A page served over HTTPS needs a
+`wss://` address; the Android release build needs one too.
 
 ## GitHub Pages
 

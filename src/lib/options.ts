@@ -4,6 +4,8 @@ export interface LaunchOptions {
   readonly preference: BackendPreference;
   readonly failDeviceCreation: boolean;
   readonly pointCapacity: number;
+  /** Base WebSocket address of a gravix-sim-backend; empty when not given. */
+  readonly sim: string;
 }
 
 function queryParams(): URLSearchParams {
@@ -28,5 +30,6 @@ export function readLaunchOptions(): LaunchOptions {
       params.get('backend') === 'webgl' ? BackendPreference.WebGL2 : BackendPreference.Auto,
     failDeviceCreation: params.get('failDevice') === '1',
     pointCapacity: Number.isFinite(points) && points > 0 ? Math.floor(points) : 300_000,
+    sim: params.get('sim') ?? '',
   };
 }
